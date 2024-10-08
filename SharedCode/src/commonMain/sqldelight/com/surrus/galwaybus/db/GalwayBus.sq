@@ -1,0 +1,22 @@
+
+CREATE TABLE BusStop(
+stop_id TEXT NOT NULL PRIMARY KEY,
+stop_ref TEXT NOT NULL,
+short_name TEXT NOT NULL,
+long_name TEXT NOT NULL,
+latitude REAL NOT NULL,
+longitude REAL NOT NULL
+);
+
+insertItem:
+INSERT OR REPLACE INTO BusStop(stop_id, stop_ref, short_name, long_name, latitude, longitude)
+VALUES(?,?,?,?,?,?);
+
+selectAll:
+SELECT * FROM BusStop;
+
+selectById:
+SELECT * FROM BusStop WHERE stop_id = ?;
+
+deleteAll:
+DELETE FROM BusStop;
